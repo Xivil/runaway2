@@ -9,7 +9,7 @@ Object::Object(const char* name) : position(NULL), unit(NULL), vector(NULL), dir
 }
 
 //　コピーコンストラクタ
-Object::Object(const Object &obj){
+Object::Object(const Object &obj) : Model(obj.filelname){
 	position = new VECTOR;
 	unit = new VECTOR;
 	vector = new VECTOR;
