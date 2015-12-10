@@ -1,0 +1,18 @@
+﻿2015/12/10 23:35:25 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "c:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\runaway2\runaway2.vcxproj" (Build ターゲット)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Model.cpp Object.cpp main.cpp
+         Object.cpp
+     1>c:\users\kouhei\documents\visual studio 2013\projects\runaway2\runaway2\object.cpp(12): error C2512: 'Model' : クラス、構造体、共用体に既定のコンストラクターがありません。
+         コードを生成中...
+         コンパイル中...
+         Model.cpp
+         コードを生成中...
+         コンパイル中...
+         main.cpp
+         コードを生成中...
+     1>プロジェクト "c:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\runaway2\runaway2.vcxproj" (Build ターゲット) のビルドが終了しました -- 失敗。
+
+ビルドに失敗しました。
+
+経過時間 00:00:01.28
