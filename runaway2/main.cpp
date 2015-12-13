@@ -1,21 +1,19 @@
 #include <DxLib.h>
-#include "Model.h"
+
 #include "SceneMgr.h"
-#include "Camera.h"
-#include "Object.h"
+
+
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow){
 	ChangeWindowMode(TRUE);
 	DxLib_Init();
 	SetDrawScreen(DX_SCREEN_BACK);
+	SetWindowSize(800, 600);
 	
-	
-	Camera c;
 	SceneMgr sceneMgr;
 	sceneMgr.Init();
+	
 	while (!ScreenFlip() && !ProcessMessage() && !ClearDrawScreen() ){
-		c.UseCamera();
-		
 		sceneMgr.Update();
 		sceneMgr.Draw();
 	}

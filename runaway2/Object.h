@@ -1,18 +1,21 @@
 #pragma once
-#include "DxLib.h"
+#include "VECTOR.h"
 #include "Model.h"
 #include "Task.h"
+
 class Object : public Task, Model{
-private:
-	VECTOR *position;
-	VECTOR *unit;
-	VECTOR *vector;
-	VECTOR *direction;
+public:
+	km::Vector3 *position;
+	km::Vector3 *unit;
+	km::Vector3 *vector;
+	km::Vector3 *direction;
 
 public:
+	Object();
 	Object(const char* name);
 	Object(const Object &obj);
-	~Object();
+	virtual ~Object();
+
 	//void Init() override;
 	//void Final() override;
 	void Update() override;

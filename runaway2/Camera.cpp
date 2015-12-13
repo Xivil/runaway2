@@ -1,22 +1,42 @@
 #include "Camera.h"
-
+#include "Func.h"
 Camera::Camera(){
-	position =  VGet(0, 5, -10);
-	target = VGet(0, 0, 0);
+	position = km::GetVector3(0, 3, 0);
+	target = km::GetVector3(0, 3, 5);
 	//奥行0.1～1000までをカメラの描画範囲とする
 	SetCameraNearFar(0.1f, 1000.0f);
+	unit = km::GetVector3(0, 0, 1);
+	direction = km::GetVector3(0, 0, 10);
 }
 
-void Camera::SetPosition(VECTOR a){
+void Camera::SetPosition(km::Vector3& a){
 	position = a;
 }
 
-void Camera::SetTarget(VECTOR a){
+void Camera::SetTarget(km::Vector3& a){
 	target = a;
 }
 
 void Camera::UseCamera(){
-	
-	//(0,10,-20)の視点から(0,10,0)のターゲットを見る角度にカメラを設置
-	SetCameraPositionAndTarget_UpVecY(position, target);
+	position += vector;
+	direction.Normalize();
+	unit = direction;
+	target = position + unit;
+	SetCameraPositionAndTarget_UpVecY(Vector3ToDxVector(position), Vector3ToDxVector(target));
+	if (Keyboard_Get(KEY_INPUT_LEFT)){
+		
+		direction += km::GetVector3(-0.1, 0, -0.1);
+		
+	}
+	if (Keyboard_Get(KEY_INPUT_RIGHT)){
+		direction += km::GetVector3(0.1, 0, 0.1);
+	}
+	if (Keyboard_Get(KEY_INPUT_UP)){
+		vector = unit;
+	}
+	else{
+		vector *= 0;
+	}
+	DrawFormatString(0, 0, GetColor(255,255,255), "%f, %f, %f", unit.x, unit.y, unit.z);
+	DrawFormatString(0, 30, GetColor(255, 255, 255), "%f, %f, %f", direction.x, unit.y, direction.z);
 }

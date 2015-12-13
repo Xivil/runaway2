@@ -84,8 +84,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="BaseScene.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Func.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ISceneChanger.cpp" />
     <ClCompile Include="main.cpp" />
@@ -93,19 +95,24 @@
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="VECTOR.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BackGround.h" />
     <ClInclude Include="BaseScene.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="Func.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="ISceneChanger.h" />
+    <ClInclude Include="Macro.h" />
+    <ClInclude Include="MATRIX.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="Quaternion.h" />
     <ClInclude Include="SceneMgr.h" />
-    <ClInclude Include="Struct_and_Macro.h" />
     <ClInclude Include="Task.h" />
+    <ClInclude Include="VECTOR.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

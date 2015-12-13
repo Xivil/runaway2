@@ -7,7 +7,7 @@ protected:
 	char filelname[256];
 public:
 	Model(const char *modelname);
-	~Model();
+	virtual ~Model();
 
 	char* GetName();
 	int GetModelHandle();
