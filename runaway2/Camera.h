@@ -1,6 +1,6 @@
 #pragma once
 #include "VECTOR.h"
-
+#include "MATRIX.h"
 class Camera{
 private:
 	km::Vector3 position;

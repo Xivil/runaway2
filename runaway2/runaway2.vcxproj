@@ -91,9 +91,11 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="ISceneChanger.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MATRIX.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Model.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="Quaternion.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
     <ClCompile Include="VECTOR.cpp" />
   </ItemGroup>
