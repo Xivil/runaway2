@@ -21,28 +21,40 @@ void Camera::SetTarget(km::Vector3& a){
 void Camera::UseCamera(){
 	static float angley = 0;
 	position += vector;
-	direction.Normalize();
-	unit = target - position;
-	unit.Normalize();
+	target += vector;
+	
+	
 	//target = position + unit;
-	target = km::AnyAxis(target, position, 1,0, 1, 0 );
-	SetCameraPositionAndTarget_UpVecY(Vector3ToDxVector(position), Vector3ToDxVector(target));
+	
+	km::Vector3 a = km::AnyAxis(target, position, angley, 0, 1, 0);
+	unit = a - position;
+	unit.Normalize();
+	SetCameraPositionAndTarget_UpVecY(Vector3ToDxVector(position), Vector3ToDxVector(a));
 	//SetCameraPositionAndAngle(Vector3ToDxVector(position), 0, DEG_TO_RAD(angley), 0);
 	
 	if (Keyboard_Get(KEY_INPUT_LEFT)){
-		
+		angley++;
 		//direction += km::GetVector3(-0.1, 0, -0.1);
 		
 	}
 	if (Keyboard_Get(KEY_INPUT_RIGHT)){
 		//direction += km::GetVector3(0.1, 0, 0.1);
+		angley--;
 	}
 	if (Keyboard_Get(KEY_INPUT_UP)){
 		vector = unit;
+	}else
+	if (Keyboard_Get(KEY_INPUT_DOWN)){
+		vector = unit * -1;
 	}
+
 	else{
 		vector *= 0;
 	}
-	DrawFormatString(0, 0, GetColor(255,255,255), "%f, %f, %f", angley, unit.y, unit.z);
-	DrawFormatString(0, 30, GetColor(255, 255, 255), "%f, %f, %f", unit.x, unit.y, unit.z);
+
+	km::PrintVector3DxLib(a, 0, 0);
+	km::PrintVector3DxLib(target, 0, 30);
+	km::PrintVector3DxLib(position, 0, 60);
+	km::PrintVector3DxLib(unit, 0, 90);
+	km::PrintVector3DxLib(direction, 0, 120);
 }
