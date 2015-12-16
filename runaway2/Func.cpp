@@ -32,4 +32,8 @@ namespace km{
 
 		return ret;
 	}
+
+	void PrintVector3DxLib(Vector3 &vec, int x, int y){
+		DrawFormatString(x, y, GetColor(255, 255, 255), "%f, %f, %f", vec.get_x(), vec.get_y(), vec.get_z());
+	}
 }
