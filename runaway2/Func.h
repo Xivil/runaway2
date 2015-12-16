@@ -15,4 +15,6 @@ namespace km{
 
 	//@Vector3Œ^‚ğMatrix4X1Œ^‚É•ÏŠ·
 	Matrix4X1 VECTOR3_TO_MATRIX(Vector3 &vec);
+
+	void PrintVector3DxLib(Vector3 &vec, int x, int y);
 }
