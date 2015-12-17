@@ -3,8 +3,9 @@
 #include "Model.h"
 #include "Task.h"
 #include "MATRIX.h"
+
 class Object : public Task, Model{
-public:
+protected:
 	km::Vector3 *position;
 	km::Vector3 *unit;
 	km::Vector3 *vector;
@@ -15,9 +16,29 @@ public:
 	Object(const char* name);
 	Object(const Object &obj);
 	virtual ~Object();
+	void operator = (const Object obj);
 
 	//void Init() override;
 	//void Final() override;
 	void Update() override;
 	void Draw() override;
+};
+
+class Character : public Object{
+protected:
+	int life;
+public:
+	Character();
+	Character(const char* name);
+	Character(const Character &obj);
+	virtual ~Character();
+
+	inline int get_life();
+	void set_life(const int life);
+	
+	//void Init() override;
+	//void Final() override;
+	void Update() override;
+	void Draw() override;
+	
 };

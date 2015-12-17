@@ -12,17 +12,17 @@
 //}
 //
 ////----------------------------------------------------
-////	Bridgeクラスのメンバ関数の実装
+////	cityクラスのメンバ関数の実装
 ////----------------------------------------------------
 //
-//Bridge::Bridge(const char *name) : Object(name){
+//city::city(const char *name) : Object(name){
 //	
 //}
 //
-//Bridge::~Bridge(){
+//city::~city(){
 //	
 //}
 //
-//void Bridge::Update(){
+//void city::Update(){
 //	
 //}

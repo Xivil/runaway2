@@ -89,9 +89,6 @@
     <ClInclude Include="Object.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="BackGround.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="VECTOR.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>

@@ -1,4 +1,5 @@
 #include "Quaternion.h"
+#include "Func.h"
 namespace km
 {
 	//	クォータニオンの掛け算
@@ -21,7 +22,7 @@ namespace km
 
 		norm = AxisX *  AxisX + AxisY *  AxisY + AxisZ *  AxisZ;
 		if (norm <= 0.0) return ans;
-
+		
 		norm = 1.0 / sqrt(norm);
 		AxisX *= norm;
 		AxisY *= norm;
@@ -29,12 +30,12 @@ namespace km
 
 		ccc = cos(0.5 * radian);
 		sss = sin(0.5 * radian);
-
+		DrawFormatString(0, 0, GetColor(255, 255, 255), "%f, %f", ccc, sss);
 		ans.t = ccc;
 		ans.V.x = sss * AxisX;
 		ans.V.y = sss * AxisY;
 		ans.V.z = sss * AxisZ;
-		return   ans;
+		return ans;
 	}
 
 	km::Vector3 AnyAxis(km::Vector3 &point, km::Vector3 c, float angle, float vx, float vy, float vz){
@@ -48,28 +49,28 @@ namespace km
 		float tsin = sin(angle / 2);
 
 		p.t = 0;
-		p.V.x = point.x - c.x;	//	0
-		p.V.y = point.y - c.y;	//	140 or -140
-		p.V.z = point.z - c.z;	//	0
-		//q.t = r.t = tcos;
-		//q.V.x = vx * tsin;
-		//q.V.y = vy * tsin;
-		//q.V.z = vz * tsin;
-		//r.V.x = -vx * tsin;
-		//r.V.y = -vy * tsin;
-		//r.V.z = -vz * tsin;
-		q = MakeRotationalQuaternion(angle, vx, vy, vz);
-		r = MakeRotationalQuaternion(-angle, vx, vy, vz);
-
+		p.V.x = point.get_x() - c.x;	//	0
+		p.V.y = point.get_y() - c.y;	//	140 or -140
+		p.V.z = point.get_z() - c.z;	//	0
+		q.t = r.t = tcos;
+		q.V.x = vx * tsin;
+		q.V.y = vy * tsin;
+		q.V.z = vz * tsin;
+		r.V.x = -vx * tsin;
+		r.V.y = -vy * tsin;
+		r.V.z = -vz * tsin;
+		/*q = MakeRotationalQuaternion(angle, vx, vy, vz);
+		r.t = q.t;
+		r.V = q.V * -1;*/
 		temp = Multi(r, p);
 		temp = Multi(temp, q);
-
+	
 		ret.x = temp.V.x + c.x;
 		ret.y = temp.V.y + c.y;
 		ret.z = temp.V.z + c.z;
-		point.x = temp.V.x + c.x;
+		/*point.x = temp.V.x + c.x;
 		point.y = temp.V.y + c.y;
-		point.z = temp.V.z + c.z;
+		point.z = temp.V.z + c.z;*/
 
 		return ret;
 	}

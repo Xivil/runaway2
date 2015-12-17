@@ -8,7 +8,7 @@
 class Game : public BaseScene{
 private:
 	Object *background;
-	Object *bridge;
+	Object *city;
 	Camera *camera;
 public:
 	Game(ISceneChanger *changer);

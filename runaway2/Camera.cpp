@@ -22,15 +22,11 @@ void Camera::UseCamera(){
 	static float angley = 0;
 	position += vector;
 	target += vector;
-	
-	
-	//target = position + unit;
-	
+
 	km::Vector3 a = km::AnyAxis(target, position, angley, 0, 1, 0);
 	unit = a - position;
 	unit.Normalize();
 	SetCameraPositionAndTarget_UpVecY(Vector3ToDxVector(position), Vector3ToDxVector(a));
-	//SetCameraPositionAndAngle(Vector3ToDxVector(position), 0, DEG_TO_RAD(angley), 0);
 	
 	if (Keyboard_Get(KEY_INPUT_LEFT)){
 		angley++;
@@ -43,11 +39,11 @@ void Camera::UseCamera(){
 	}
 	if (Keyboard_Get(KEY_INPUT_UP)){
 		vector = unit;
-	}else
-	if (Keyboard_Get(KEY_INPUT_DOWN)){
+	}
+	else if (Keyboard_Get(KEY_INPUT_DOWN)){
 		vector = unit * -1;
 	}
-
+	
 	else{
 		vector *= 0;
 	}

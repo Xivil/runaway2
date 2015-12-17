@@ -1,7 +1,7 @@
 #include <DxLib.h>
 
 #include "SceneMgr.h"
-
+#include "Object.h"
 
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow){

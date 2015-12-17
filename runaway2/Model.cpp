@@ -12,9 +12,9 @@ Model::Model(const char *modelname){
 }
 
 Model::~Model(){
-	MV1DeleteModel(*model);
+	
 	delete model;
-	model = NULL;
+	model = 0;
 }
 
 char* Model::GetName(){

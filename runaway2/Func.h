@@ -1,6 +1,12 @@
 #include "DxLib.h"
 #include "MATRIX.h"
 #include "VECTOR.h"
+
+#define KEY_LEFT 1
+#define KEY_RIGHT 2
+#define KEY_UP 4
+#define KEY_DOWN 8
+
 static int m_Key[256];  // ƒL[‚Ì“ü—Íó‘ÔŠi”[—p•Ï”
 
 
@@ -10,6 +16,7 @@ int Keyboard_Get(int KeyCode);
 void Keyboard_Update();
 
 namespace km{
+	
 	//	Matrix4X1Œ^‚ğVector3Œ^‚É•ÏŠ·
 	Vector3 MATRIX_TO_VECTOR3(Matrix4X1 &mat);
 
@@ -17,4 +24,6 @@ namespace km{
 	Matrix4X1 VECTOR3_TO_MATRIX(Vector3 &vec);
 
 	void PrintVector3DxLib(Vector3 &vec, int x, int y);
+
+	
 }
