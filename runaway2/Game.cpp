@@ -3,8 +3,7 @@ Game::Game(ISceneChanger* changer) : BaseScene(changer){
 	background = new Object("Graph/Model/Skydome_X8/Dome_X803.x");
 	city = new Object("Graph/Model/ネオUKシティ_Ver1.10/model/ネオＵＫシティ(夜景)_Ver1.10.pmx");
 	camera = new Camera;
-	
-	
+	player = new Character("Graph/Model/にがミクV205/にがミク[ゴシック]V205.pmd");
 }
 
 Game::~Game(){
@@ -21,7 +20,6 @@ void Game::Init(){
 }
 
 void Game::Update(){
-	
 	camera->UseCamera();
 	Keyboard_Update();
 }
@@ -29,4 +27,5 @@ void Game::Update(){
 void Game::Draw(){
 	//background->Draw();
 	city->Draw();
+	player->Draw();
 }

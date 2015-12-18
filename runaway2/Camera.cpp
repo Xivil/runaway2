@@ -30,11 +30,8 @@ void Camera::UseCamera(){
 	
 	if (Keyboard_Get(KEY_INPUT_LEFT)){
 		angley++;
-		//direction += km::GetVector3(-0.1, 0, -0.1);
-		
 	}
 	if (Keyboard_Get(KEY_INPUT_RIGHT)){
-		//direction += km::GetVector3(0.1, 0, 0.1);
 		angley--;
 	}
 	if (Keyboard_Get(KEY_INPUT_UP)){

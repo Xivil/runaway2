@@ -1,7 +1,10 @@
-﻿2015/12/18 1:51:10 にビルドを開始しました。
-     1>ノード 2 上のプロジェクト "C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\runaway2\runaway2.vcxproj" (Build ターゲット)。
-     1>Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Debug\runaway2.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Debug\runaway2.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Debug\runaway2.lib" /MACHINE:X86 Debug\BackGround.obj
+﻿2015/12/18 16:48:53 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\大城正典\Documents\e12136km\runaway2\runaway2\runaway2.vcxproj" (Build ターゲット)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\大城正典\Documents\e12136km\runaway2\Debug\runaway2.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\大城正典\Documents\e12136km\runaway2\Debug\runaway2.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\大城正典\Documents\e12136km\runaway2\Debug\runaway2.lib" /MACHINE:X86 Debug\BackGround.obj
          Debug\BaseScene.obj
          Debug\Camera.obj
          Debug\Func.obj
@@ -15,10 +18,9 @@
          Debug\Quaternion.obj
          Debug\SceneMgr.obj
          Debug\VECTOR.obj
-         LINK : 前回のインクリメンタル リンクで C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Debug\runaway2.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
-         runaway2.vcxproj -> C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Debug\runaway2.exe
-     1>プロジェクト "C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\runaway2\runaway2.vcxproj" (Build ターゲット) のビルドが完了しました。
+         runaway2.vcxproj -> C:\Users\大城正典\Documents\e12136km\runaway2\Debug\runaway2.exe
+     1>プロジェクト "C:\Users\大城正典\Documents\e12136km\runaway2\runaway2\runaway2.vcxproj" (Build ターゲット) のビルドが完了しました。
 
 ビルドに成功しました。
 
-経過時間 00:00:00.54
+経過時間 00:00:01.53

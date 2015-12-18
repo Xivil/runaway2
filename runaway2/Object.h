@@ -16,7 +16,7 @@ public:
 	Object(const char* name);
 	Object(const Object &obj);
 	virtual ~Object();
-	void operator = (const Object obj);
+	Object& operator = (const Object &obj);
 
 	//void Init() override;
 	//void Final() override;
@@ -27,6 +27,7 @@ public:
 class Character : public Object{
 protected:
 	int life;
+	MV1_COLL_RESULT_POLY_DIM HidDim;
 public:
 	Character();
 	Character(const char* name);

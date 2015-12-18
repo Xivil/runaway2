@@ -36,13 +36,15 @@ Object::~Object(){
 	model = 0;
 }
 
-void Object::operator = (const Object obj){
-	position = obj.position;
-	unit = obj.unit;
-	vector = obj.vector;
-	direction = obj.direction;
-	*model = MV1LoadModel(obj.filelname);
-	
+Object& Object::operator = (const Object &obj){
+	if (this != &obj)
+	{
+		*position = *obj.position;
+		*unit = *obj.unit;
+		*vector = *obj.vector;
+		*direction = *obj.direction;
+	}
+	return *this;
 }
 
 //void Object::Init(){}

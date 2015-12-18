@@ -10,6 +10,7 @@ private:
 	Object *background;
 	Object *city;
 	Camera *camera;
+	Character *player;
 public:
 	Game(ISceneChanger *changer);
 	virtual ~Game();
