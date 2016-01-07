@@ -14,7 +14,7 @@ private:
 public:
 	Camera();
 	virtual ~Camera(){}
-	void SetPosition(km::Vector3& a);
-	void SetTarget(km::Vector3& a);
+	void SetPosition(const km::Vector3& a);
+	void SetTarget(const km::Vector3& a);
 	void UseCamera();
 };

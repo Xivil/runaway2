@@ -72,11 +72,12 @@ Vector3& Vector3::operator -= (const Vector3 &v){
 }
 
 //ベクトルの正規化
-void Vector3::Normalize(){
+Vector3 Vector3::Normalize(){
 	float mag = getMagnitude();
 	x /= mag;
 	y /= mag;
 	z /= mag;
+	return *this;
 }
 
 //	2つのベクトルの内積
@@ -107,7 +108,7 @@ float km::Scalar(const km::Vector3 &v1, const km::Vector3 &v2){
 	return acosf(scalar / (tmp1 * tmp2)) * 180 / PI;
 }
 
-Vector3 km::GetVector3(float x, float y, float z){
+Vector3 km::GetVector3(const float x, const float y, const float z){
 	km::Vector3 temp;
 	temp.x = x;
 	temp.y = y;

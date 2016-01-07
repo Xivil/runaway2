@@ -10,11 +10,18 @@ private:
 	Object *background;
 	Object *city;
 	Camera *camera;
-	Character *player;
+	Character *player; 
+	unsigned int flag;
+	tagMV1_COLL_RESULT_POLY fall;
+	tagMV1_COLL_RESULT_POLY side;
 public:
 	Game(ISceneChanger *changer);
 	virtual ~Game();
 	void Init() override;
 	void Update() override;
+	void CameraUpdate();
+	void PlayerUpdate();
+	void StageColisionInfo();
+
 	void Draw() override;
 };

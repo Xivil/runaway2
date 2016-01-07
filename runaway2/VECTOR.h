@@ -147,7 +147,7 @@ namespace km{
 		Vector3& operator -= (const Vector3 &v);
 
 		//ベクトルの正規化
-		void Normalize();
+		Vector3 Normalize();
 
 		//	2つのベクトルの内積
 		float Dot(const Vector3 &v);
