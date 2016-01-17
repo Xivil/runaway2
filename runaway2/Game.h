@@ -11,6 +11,8 @@ private:
 	Object *city;
 	Camera *camera;
 	Character *player; 
+	km::Vector3 *move_position;
+	int position_state;
 	unsigned int flag;
 	tagMV1_COLL_RESULT_POLY fall;
 	tagMV1_COLL_RESULT_POLY side;
@@ -24,4 +26,5 @@ public:
 	void StageColisionInfo();
 
 	void Draw() override;
+	void MovePositionLoad(const char* text);
 };

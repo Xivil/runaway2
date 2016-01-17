@@ -1,11 +1,18 @@
+#include <fstream>
+#include <string>
+using namespace std;
+
 #include "Game.h"
 #include "Quaternion.h"
 #include "Model.h"
+
 Game::Game(ISceneChanger* changer) : BaseScene(changer){
 	background = new Object("Graph/Model/Skydome_X8/Dome_X803.x");
 	city = new Object("Graph/Model/ネオUKシティ_Ver1.10/model/ネオＵＫシティ(夜景)_Ver1.10.pmx");
 	camera = new Camera;
 	player = new Player("Graph/Model/にがミクV205/にがミク[ゴシック]V205.pmd");
+	MovePositionLoad("move_position.txt");
+	move_position[0].y = 20;
 	Init();
 }
 
@@ -16,11 +23,13 @@ Game::~Game(){
 	city = 0;
 	delete camera;
 	camera = 0;
+	delete[] move_position;
+	move_position = 0;
 }
 
 void Game::Init(){
-	*player->position = km::GetVector3(0, 0, 0);
-	*player->direction = km::GetVector3(0, 0, 5);
+	*player->position = move_position[0];
+	*player->direction = move_position[0] + km::GetVector3(0, 0, 5);
 	StageColisionInfo();
 }
 
@@ -70,8 +79,12 @@ void Game::PlayerUpdate(){
 	else{
 		player->enable_gravity();
 	}
-
-	
+	if (Keyboard_Get(KEY_INPUT_Q) == 1){
+		position_state++;
+		*player->position = move_position[position_state];
+		*player->direction = move_position[position_state] + km::GetVector3(0, 0, 5);
+	}
+	DrawFormatString(0, 300, GetColor(255, 255, 255), "state %d", position_state);
 	km::Vector3 a = km::AnyAxis(*player->direction, *player->position, player->rotate->get_x(), 0, 1, 0);
 	//*player->direction = a;
 	*player->unit = a - *player->position;
@@ -109,4 +122,68 @@ void Game::Draw(){
 	km::PrintVector3DxLib(*player->position, 0, 0);
 	DrawFormatString(0, 30, GetColor(255, 255, 255), "%f %f %f", fall.HitPosition.x, fall.HitPosition.y, fall.HitPosition.z);
 	DrawFormatString(0, 60, GetColor(255, 255, 255), "%f %f %f", fall.Normal.x, fall.Normal.y, fall.Normal.z);
+}
+
+namespace file{
+	int line_count = 0;
+}
+
+void Game::MovePositionLoad(const char* text){
+	FILE *fp;
+	int a;
+	int cnt = 0;
+	fopen_s(&fp, text , "r");
+	if (fp) {
+		while ((a = getc(fp)) != EOF) {
+			if (a == '\n') cnt++;
+		}
+	}
+	fclose(fp);
+
+	move_position = new km::Vector3[cnt];
+
+	//テキストファイルから敵の情報を得る
+	FILE *f;
+	double c = 0;
+	char buf[100];
+	memset(buf, 0, sizeof(buf));
+	string s;
+	fopen_s(&f, text, "r");
+	int col = 1;
+	int row = 0;
+
+	
+
+	while (fgetc(f) != '\n');//一行進める
+	while (1){
+		while (1){
+			c = fgetc(f);
+			if (c == EOF){
+				goto out;
+			}
+			if (c != '\t' && c != '\n'){
+				s += c;
+			}
+			else { break; }
+
+		}
+
+		switch (col){
+		case 1: move_position[row].x = atof(s.c_str()); break;
+		case 2: move_position[row].z = atof(s.c_str()); break;
+		
+		default:break;
+		}
+
+		s.clear();
+		++col;
+
+		if (c == '\n'){
+			col = 1;
+			move_position[row].y = 0;
+			row++;
+		}
+	}
+out:
+	fclose(f);
 }
