@@ -98,10 +98,10 @@ namespace km{
 		//	ゲッターとセッター
 		//	クラスの変数は非公開にするのが基本　他のクラスや関数から好き勝手いじられては困るので
 		//	メンバ変数を公開するか非公開にするかは保留中　現状ではテストを兼ねているのでとりあえず公開にしている
-		inline float get_x() const;
-		inline float get_y() const;
-		inline float get_z() const;
-		inline Vector3 get_all() const;
+		float get_x() const;
+		float get_y() const;
+		float get_z() const;
+		Vector3 get_all() const;
 		void set_x(const float x);
 		void set_y(const float y);
 		void set_z(const float z);
@@ -146,6 +146,9 @@ namespace km{
 		//	除算代入演算子のオーバーロード
 		Vector3& operator -= (const Vector3 &v);
 
+		//	比較演算子のオーバーロード
+		
+
 		//ベクトルの正規化
 		Vector3 Normalize();
 
@@ -155,6 +158,8 @@ namespace km{
 		//	2つのベクトルの外積
 		Vector3 Cross(const Vector3 &v);
 
+		
+
 		//　コンソール用の各メンバ変数の表示
 		void print();
 	}Point3;
@@ -162,9 +167,18 @@ namespace km{
 	//	内積から角度を計算
 	float Scalar(const Vector3 &v1, const Vector3 &v2);
 
-	Vector3 GetVector3(float x, float y, float z);
+	//	Vector3クラスの値を返すための関数
+	Vector3 GetVector3(const float x, const float y, const float z);
 
-	VECTOR Vector3ToDxVector(Vector3& a);
+	//	DxライブラリのVECTOR型に変換する関数
+	VECTOR Vector3ToDxVector(const Vector3& a);
+
+	Vector3 DxLibVECTORToVector3(const VECTOR &v);
+	//	2つのベクトルの長さ
+	float GetTwoVectorLength(const Vector3& a, const Vector3& b);
+
+	//	2つのベクトルの水平面上での衝突判定
+	bool Horizontal_Colision(const Vector3& a, const Vector3& b, const float length);
 
 }
 

@@ -267,7 +267,7 @@ namespace km
 		temp.index[1][1] = cos(DEG_TO_RAD(angle));
 		temp.index[1][2] = -1 * pointx * sin(DEG_TO_RAD(angle)) + cos(DEG_TO_RAD(angle)) * -pointy + pointy;
 		temp.index[2][2] = 1;
-
+		//km::TransposeMatrix(temp);
 		ret = MultiMatrixNxM(temp, a);
 		return ret;
 	}

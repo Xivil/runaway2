@@ -1,31 +1,47 @@
-﻿2015/12/13 1:06:07 にビルドを開始しました。
+﻿2016/01/21 23:42:39 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\runaway2\runaway2.vcxproj" (Build ターゲット)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BackGround.cpp Camera.cpp Game.cpp main.cpp Object.cpp SceneMgr.cpp VECTOR.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BackGround.cpp BaseScene.cpp Camera.cpp Func.cpp Game.cpp ISceneChanger.cpp main.cpp MATRIX.cpp Menu.cpp Model.cpp Object.cpp Quaternion.cpp SceneMgr.cpp VECTOR.cpp
          BackGround.cpp
+         BaseScene.cpp
          Camera.cpp
+         Func.cpp
          Game.cpp
+     1>Game.cpp(37): warning C4305: '引数' : 'double' から 'float' へ切り詰めます。
+     1>Game.cpp(43): warning C4305: '引数' : 'double' から 'float' へ切り詰めます。
+     1>Game.cpp(201): warning C4305: '引数' : 'double' から 'float' へ切り詰めます。
+     1>Game.cpp(269): warning C4305: '引数' : 'double' から 'const float' へ切り詰めます。
+         ISceneChanger.cpp
          main.cpp
+         MATRIX.cpp
+         Menu.cpp
+         Model.cpp
          Object.cpp
+     1>Object.cpp(149): warning C4305: '+=' : 'double' から 'float' へ切り詰めます。
+     1>Object.cpp(150): warning C4305: '+=' : 'double' から 'float' へ切り詰めます。
+         Quaternion.cpp
          SceneMgr.cpp
          VECTOR.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Release\runaway2.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Release\runaway2.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Release\runaway2.lib" /MACHINE:X86 /SAFESEH Release\BackGround.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Release\runaway2.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Release\runaway2.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Release\runaway2.lib" /MACHINE:X86 /SAFESEH:NO Release\BackGround.obj
          Release\BaseScene.obj
          Release\Camera.obj
+         Release\Func.obj
          Release\Game.obj
          Release\ISceneChanger.obj
          Release\main.obj
+         Release\MATRIX.obj
          Release\Menu.obj
          Release\Model.obj
          Release\Object.obj
+         Release\Quaternion.obj
          Release\SceneMgr.obj
          Release\VECTOR.obj
-     1>Camera.obj : error LNK2001: 外部シンボル ""class km::Vector3 __cdecl km::GetVector3(float,float,float)" (?GetVector3@km@@YA?AVVector3@1@MMM@Z)" は未解決です。
-     1>Camera.obj : error LNK2001: 外部シンボル ""struct DxLib::tagVECTOR __cdecl km::Vector3ToDxVector(class km::Vector3 &)" (?Vector3ToDxVector@km@@YA?AUtagVECTOR@DxLib@@AAVVector3@1@@Z)" は未解決です。
-     1>C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Release\runaway2.exe : fatal error LNK1120: 2 件の未解決の外部参照
-     1>プロジェクト "C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\runaway2\runaway2.vcxproj" (Build ターゲット) のビルドが終了しました -- 失敗。
+         コード生成しています。
+         コード生成が終了しました。
+         runaway2.vcxproj -> C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Release\runaway2.exe
+     1>プロジェクト "C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\runaway2\runaway2.vcxproj" (Build ターゲット) のビルドが完了しました。
 
-ビルドに失敗しました。
+ビルドに成功しました。
 
-経過時間 00:00:03.93
+経過時間 00:00:09.30

@@ -209,7 +209,7 @@ namespace km
 		int column = MatrixColumn(a);
 
 		//	エラー処理　行と列が違う構造体の場合は関数を抜ける
-		if (line != column) return;
+		/*if (line != column) return;*/
 
 		for (int i = 0; i < line; i++){
 			for (int j = 0; j < column; j++){

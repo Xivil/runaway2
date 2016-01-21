@@ -11,10 +11,10 @@ Vector3::Vector3(const Vector3 &obj){
 	*this = obj;
 }
 
-inline float Vector3::get_x() const { return x; }
-inline float Vector3::get_y() const { return y; }
-inline float Vector3::get_z() const { return z; }
-inline Vector3 Vector3::get_all() const { return *this; }
+float Vector3::get_x() const { return x; }
+float Vector3::get_y() const { return y; }
+float Vector3::get_z() const { return z; }
+Vector3 Vector3::get_all() const { return *this; }
 void Vector3::set_x(const float x){ this->x = x; }
 void Vector3::set_y(const float y){ this->y = y; }
 void Vector3::set_z(const float z){ this->z = z; }
@@ -116,6 +116,26 @@ Vector3 km::GetVector3(const float x, const float y, const float z){
 	return temp;
 }
 
-VECTOR km::Vector3ToDxVector(km::Vector3& a){
+VECTOR km::Vector3ToDxVector(const km::Vector3& a){
 	return VGet(a.x, a.y, a.z);
+}
+
+Vector3 km::DxLibVECTORToVector3(const VECTOR &v){
+	return Vector3(v.x, v.y, v.z);
+}
+
+float km::GetTwoVectorLength(const Vector3& a, const Vector3& b){
+	Vector3 tmp = a - b;
+	return tmp.getMagnitude();
+}
+
+bool km::Horizontal_Colision(const Vector3& a, const Vector3& b, const float length){
+	Vector3 tmp = a - b;
+	float col = tmp.get_x() * tmp.get_x() + tmp.get_z() * tmp.get_z();
+	if (length * length > col){
+		return true;
+	}
+	else{
+		return false;
+	}
 }

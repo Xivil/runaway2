@@ -1,0 +1,32 @@
+
+プログラムの概要
+一応FPS
+
+実行可能環境
+OS Windows7
+ライブラリ　Dxライブラリ
+
+開発環境
+使用言語　C++
+IDE　VisualStudio2013
+使用ライブラリ　Dxライブラリ　自作ライブラリ
+
+アピールポイントゲーム
+自作のライブラリを用いたプログラム(namespace kmのついたもの)
+オブジェクト志向を活用した。おかげで製作期間は非常に短い
+雰囲気が哀愁ただよう感じで良い
+自由落下の概念を取り入れました(ただし現実の物理とは程遠い)
+
+苦労したところ　
+ベクトルを使用した計算。
+
+BGM素材
+魔王魂　様　http://maoudamashii.jokersounds.com/
+MusMus　様　http://musmus.main.jp/
+H/MIX GALLERY　様　http://www.hmix.net/music_gallery/image/game.htm#op
+無料効果音で遊ぼう！　様　http://taira-komori.jpn.org/index.html
+
+3Dモデル素材
+VPVPwiki　様　http://www6.atwiki.jp/vpvpwiki
+ニコニコ動画　様　http://www.nicovideo.jp/?header
+

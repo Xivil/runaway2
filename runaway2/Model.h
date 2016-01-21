@@ -3,7 +3,7 @@
 
 class Model{
 public:
-	int *model;
+	int model;
 	int material_num;
 	int texture_num;
 	int frame_num;
@@ -13,9 +13,11 @@ public:
 
 	char filelname[256];
 public:
+	Model();
 	Model(const char *modelname);
+	
 	virtual ~Model();
-
+	void SetModel(const char *modelname);
 	char* GetName();
 	int GetModelHandle();
 };

@@ -1,0 +1,25 @@
+﻿2016/01/21 20:07:28 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\runaway2\runaway2.vcxproj" (Build ターゲット)。
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Release\runaway2.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Release\runaway2.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Release\runaway2.lib" /MACHINE:X86 /SAFESEH:NO Release\BackGround.obj
+         Release\BaseScene.obj
+         Release\Camera.obj
+         Release\Func.obj
+         Release\Game.obj
+         Release\ISceneChanger.obj
+         Release\main.obj
+         Release\MATRIX.obj
+         Release\Menu.obj
+         Release\Model.obj
+         Release\Object.obj
+         Release\Quaternion.obj
+         Release\SceneMgr.obj
+         Release\VECTOR.obj
+         コード生成しています。
+         コード生成が終了しました。
+         runaway2.vcxproj -> C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\Release\runaway2.exe
+     1>プロジェクト "C:\Users\kouhei\documents\visual studio 2013\Projects\runaway2\runaway2\runaway2.vcxproj" (Build ターゲット) のビルドが完了しました。
+
+ビルドに成功しました。
+
+経過時間 00:00:01.48

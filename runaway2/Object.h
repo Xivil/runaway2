@@ -4,6 +4,7 @@
 #include "Task.h"
 #include "MATRIX.h"
 
+//	物体のクラス　アニメーションの無いものはだいたいこれ
 class Object : public Task, public Model{
 public:
 	km::Vector3 *position;
@@ -35,10 +36,15 @@ public:
 	void Draw() override;
 };
 
+//	アニメーションやライフ、自由落下の影響を受ける物などのクラス
 class Character : public Object{
 protected:
 	int life;
 	unsigned int flag;
+	int AttachIndex;
+	float AnimTime;
+	float TotalTime;
+	float AnimSpeed;
 public:
 	enum flag_state{
 		gravity = 1,
@@ -56,9 +62,13 @@ public:
 		return flag;
 	}
 
+	void enable_flag(const unsigned int flag);
+	void disable_flag(const unsigned int flag);
 	void set_life(const int life);
 	void enable_gravity();
 	void disable_gravity();
+	void Animation();
+	void SetAnimPattern(const int num);
 	
 	//void Init() override;
 	//void Final() override;
@@ -69,10 +79,23 @@ public:
 
 class Player : public Character{
 public:
+	Player(){}
 	Player(const char* name);
 };
 
 class Enemy : public Character{
 public:
 
+};
+
+class Shot : public Character{
+private:
+	
+public:
+	Shot();
+	//Shot(const char* name);
+	void SetShotFlag();
+
+	void Update() override;
+	void Draw() override;
 };

@@ -1,7 +1,11 @@
 #include "Object.h"
 
-Object::Object() : Model(NULL){
-	
+Object::Object() : Model(){
+	position = new km::Vector3;
+	unit = new km::Vector3;
+	vector = new km::Vector3;
+	direction = new km::Vector3;
+	rotate = new km::Vector3[3];
 }
 
 //	コンストラクタ
@@ -33,9 +37,9 @@ Object::~Object(){
 	unit = 0;
 	delete position;
 	position = 0;
-	delete rotate;
+	delete[] rotate;
 	rotate = 0;
-	delete model;
+	
 	model = 0;
 }
 
@@ -90,19 +94,19 @@ void Object::Update(){
 	*direction += *vector;
 	//*unit = *direction - *position;
 	//unit->Normalize();
-	MV1SetPosition(*model ,Vector3ToDxVector(*position));
-	MV1SetRotationXYZ(*model, VGet(0, DEG_TO_RAD(rotate->get_x() * -1), 0));
+	MV1SetPosition(model ,Vector3ToDxVector(*position));
+	MV1SetRotationXYZ(model, VGet(0, DEG_TO_RAD(rotate->get_x() * -1), 0));
 }
 void Object::Draw(){
-	MV1DrawModel(*model);
+	MV1DrawModel(model);
 }
 
 
 /*-------------------------------------
 	Character
 ---------------------------------------*/
-Character::Character() : Object(NULL){
-	
+Character::Character() : Object(){
+	flag = 0;
 }
 
 Character::Character(const char* name) : Object(name){
@@ -117,6 +121,13 @@ Character::~Character(){
 
 }
 
+void Character::enable_flag(const unsigned int flag){
+	this->flag |= flag;
+}
+
+void Character::disable_flag(const unsigned int flag){
+	this->flag &= ~flag;
+}
 
 void Character::set_life(const int life){
 	this->life = life;
@@ -135,8 +146,8 @@ void Character::Update(){
 
 	if (flag & gravity)
 	{
-		position->y += -1;
-		direction->y += -1;
+		position->y += -0.1;
+		direction->y += -0.1;
 	}
 	else{
 		vector->y = 0;
@@ -149,6 +160,34 @@ void Character::Draw(){
 
 
 /*------------------------------------
-	player
+	playerクラス
 ------------------------------------*/
 Player::Player(const char *name) : Character(name){}
+
+
+/*------------------------------------
+	Shotクラス
+------------------------------------*/
+Shot::Shot() : Character(){}
+
+void Shot::SetShotFlag(){
+	flag |= 2;
+}
+
+void Shot::Update(){
+	if (flag>>1){
+		*position += *vector;
+		*direction += *vector;
+		//*unit = *direction - *position;
+		//unit->Normalize();
+		MV1SetPosition(model, Vector3ToDxVector(*position));
+		MV1SetRotationXYZ(model, VGet(0, DEG_TO_RAD(rotate->get_x() * -1), 0));
+	}
+	
+}
+
+void Shot::Draw(){
+	if (flag>>1){
+		Character::Draw();
+	}
+}

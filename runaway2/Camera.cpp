@@ -5,7 +5,7 @@ Camera::Camera(){
 	position = km::GetVector3(0, 3, 0);
 	target = km::GetVector3(0, 3, 5);
 	//‰œs0.1`1000‚Ü‚Å‚ğƒJƒƒ‰‚Ì•`‰æ”ÍˆÍ‚Æ‚·‚é
-	SetCameraNearFar(0.1f, 1000.0f);
+	SetCameraNearFar(0.1f, 2000.0f);
 	unit = km::GetVector3(0, 0, 1);
 	direction = km::GetVector3(0, 0, 10);
 }
